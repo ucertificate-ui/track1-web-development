@@ -1,0 +1,122 @@
+.twitter-search-widget {
+  -webkit-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  color: black;
+  background-image: url(images/twitter-search-bg.png);
+  background-position: center;
+  background-repeat: repeat-x;
+  background-color: #539eff;
+  padding: 5px;
+  margin: 5px;
+  overflow: auto;
+}
+.twitter-search-widget-content {
+  min-width: 300px;
+}
+.twitter-search-widget-content .logo {
+  float: right;
+}
+.twitter-search-widget-content .logo img {
+  height: 30px;
+}
+.twitter-search-widget-content .header,
+.twitter-search-widget-content .search-form {
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  margin-left: 10px;
+}
+.twitter-search-widget-content .search-form input[name=query] {
+  border: 1px solid #ccc;
+  -webkit-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  padding: 4px;
+  margin: 0;
+  min-width: 150px;
+}
+.twitter-search-widget-content .search-form input[name=query]:focus {
+  -webkit-box-shadow: inset 0 0 5px #000000;
+  -ms-box-shadow: inset 0 0 5px #000000;
+  -moz-box-shadow: inset 0 0 5px #000000;
+  -o-box-shadow: inset 0 0 5px #000000;
+  box-shadow: inset 0 0 5px #000000;
+  outline: none;
+}
+.twitter-search-widget-content .search-results {
+  clear: both;
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+}
+.twitter-search-widget-content .search-results .search-item {
+  -webkit-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 5px #000000;
+  -ms-box-shadow: 0 0 5px #000000;
+  -moz-box-shadow: 0 0 5px #000000;
+  -o-box-shadow: 0 0 5px #000000;
+  box-shadow: 0 0 5px #000000;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 0;
+  margin-top: 5px;
+}
+.twitter-search-widget-content .search-results .search-item .profile-image {
+  -webkit-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  width: 48px;
+  height: 48px;
+  float: left;
+}
+.twitter-search-widget-content .search-results .search-item .profile-username {
+  font-weight: bold;
+  display: inline-block;
+  margin-left: 5px;
+}
+.twitter-search-widget-content .search-results .search-item .profile-user {
+  font-size: 0.6em;
+  color: #ccc;
+  display: inline-block;
+  margin-left: 5px;
+}
+.twitter-search-widget-content .search-results .search-item .item-content {
+  margin-left: 53px;
+}
+.twitter-search-widget-content .search-results .search-item .item-time {
+  clear: both;
+  color: #ccc;
+  margin-top: 5px;
+  font-size: 0.3em;
+}
+.twitter-search-widget-content .error-message {
+  -webkit-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #c00;
+  border: 1px solid red;
+  color: white;
+  padding: 2px;
+}
+.twitter-search-widget-content .footer {
+  margin-top: 10px;
+  font-size: 0.4em;
+}
