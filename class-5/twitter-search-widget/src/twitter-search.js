@@ -120,6 +120,7 @@
                     self.resultsList = element.getElementsByClassName("search-results")[0];
                     self.searchItemTemplate = self.resultsList.getElementsByClassName("search-item")[0];
                     self.errorMessage = element.getElementsByClassName("error-message")[0];
+                    self.resultsList.removeChild(self.searchItemTemplate);
 
                     self.ready = true;
 
@@ -175,7 +176,7 @@
                         var result = data[i],
                             resultItem = this.searchItemTemplate.cloneNode(true);
 
-                        resultItem.getElementsByClassName("profile-image")[0].style.backgroundImage = "url("+result.profile_image_url+");";
+                        resultItem.getElementsByClassName("profile-image")[0].style.backgroundImage = "url("+result.profile_image_url+")";
                         resultItem.getElementsByClassName("profile-username")[0].textContent = result.from_user_name;
                         resultItem.getElementsByClassName("profile-user")[0].textContent = "@"+result.from_user;
                         resultItem.getElementsByClassName("item-content")[0].textContent = result.text;
@@ -192,6 +193,7 @@
 
         renderError: function (error) {
             if(this.ready && error) {
+                this.resultsList.innerHTML = "";
                 this.errorMessage.textContent = error;
                 this.errorMessage.style.display = "";
             }
@@ -228,19 +230,28 @@
             head.removeChild(script);
         }
 
-        global ["cb"+ts] = function (data) {
-            cleanUp();
-            if(success) {
-                success(data);
+        function fail(cause) {
+            if(error) {
+                error(cause);
             }
         };
 
         script.onerror = function () {
             cleanUp();
-            if(error) {
-                error("Search request failed...");
+            fail("Search request failed...");
+        }
+
+        global ["cb"+ts] = function (data) {
+            cleanUp();
+            if(data.error) {
+                fail(data.error);
+            }
+            else if (success) {
+                success(data);
             }
         };
+
+
 
         script.src = searchEndpoint + "?" + queryString;
 
