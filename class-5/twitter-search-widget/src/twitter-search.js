@@ -62,8 +62,8 @@
 
     /* DOM Helper Methods */
 
-    function getElementsByAttribute (attrName, attrValue, tagName) {
-        var elements  = doc.getElementsByTagName(tagName || "*"),
+    function getElementsByAttribute (attrName, attrValue, tagName, from) {
+        var elements  = (from || doc).getElementsByTagName(tagName || "*"),
             results = [];
 
         for (var i = 0; i < elements.length; i++) {
@@ -98,7 +98,7 @@
     TwitterSearchWidgetView.prototype = {
         init: function () {
             //add root css class
-            if(!this.element.className.match(/(\s)*twitter-search-widget(\s)*/)){
+            if(!this.element.className.match(/(\s)+twitter-search-widget(\s)+/)){
                 this.element.className += " twitter-search-widget";
             }
             this.loadTemplate();
@@ -115,8 +115,8 @@
                 // give innerHTML a little breath to process...
                 setTimeout(function() {
 
-                    self.queryInput = getElementsByAttribute("name", "query", "input")[0];
-                    self.submitInput = getElementsByAttribute("name", "submit", "input")[0];
+                    self.queryInput = getElementsByAttribute("name", "query", "input", element)[0];
+                    self.submitInput = getElementsByAttribute("name", "submit", "input", element)[0];
                     self.resultsList = element.getElementsByClassName("search-results")[0];
                     self.searchItemTemplate = self.resultsList.getElementsByClassName("search-item")[0];
                     self.errorMessage = element.getElementsByClassName("error-message")[0];
