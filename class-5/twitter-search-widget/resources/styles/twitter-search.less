@@ -30,7 +30,7 @@
     padding: 5px;
     margin: 5px;
 
-    overflow: scroll;
+    overflow: auto;
 }
 
 .twitter-search-widget-content {
@@ -38,7 +38,6 @@
 
     .logo {
         img {
-            width: 30px;
             height: 30px;
         }
         float: right;
@@ -48,12 +47,16 @@
         float: left;
         height: 30px;
         line-height: 30px;
+        margin-left: 10px;
+    }
 
+    .search-form {
         input[name=query] {
             border: 1px solid #ccc;
             .border-radius(5px); 
 
             padding: 4px;
+            margin: 0;
             min-width: 150px;
 
             &:focus {
@@ -63,17 +66,12 @@
         }
     }
 
-    .header {
-        margin-right: 5px;
-        margin-left: 10px;
-    }
-
     .search-results {
         clear: both;
 
         list-style: none;
-        margin: 0 10px;
-        padding: 0;
+        margin: 0;
+        padding: 10px;
 
         .search-item {
             .border-radius(5px);

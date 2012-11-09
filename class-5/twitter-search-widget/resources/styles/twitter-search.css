@@ -14,7 +14,7 @@
   background-color: #539eff;
   padding: 5px;
   margin: 5px;
-  overflow: scroll;
+  overflow: auto;
 }
 .twitter-search-widget-content {
   min-width: 300px;
@@ -23,7 +23,6 @@
   float: right;
 }
 .twitter-search-widget-content .logo img {
-  width: 30px;
   height: 30px;
 }
 .twitter-search-widget-content .header,
@@ -31,8 +30,8 @@
   float: left;
   height: 30px;
   line-height: 30px;
+  margin-left: 10px;
 }
-.twitter-search-widget-content .header input[name=query],
 .twitter-search-widget-content .search-form input[name=query] {
   border: 1px solid #ccc;
   -webkit-border-radius: 5px;
@@ -41,9 +40,9 @@
   -o-border-radius: 5px;
   border-radius: 5px;
   padding: 4px;
+  margin: 0;
   min-width: 150px;
 }
-.twitter-search-widget-content .header input[name=query]:focus,
 .twitter-search-widget-content .search-form input[name=query]:focus {
   -webkit-box-shadow: inset 0 0 5px #000000;
   -ms-box-shadow: inset 0 0 5px #000000;
@@ -52,15 +51,11 @@
   box-shadow: inset 0 0 5px #000000;
   outline: none;
 }
-.twitter-search-widget-content .header {
-  margin-right: 5px;
-  margin-left: 10px;
-}
 .twitter-search-widget-content .search-results {
   clear: both;
   list-style: none;
-  margin: 0 10px;
-  padding: 0;
+  margin: 0;
+  padding: 10px;
 }
 .twitter-search-widget-content .search-results .search-item {
   -webkit-border-radius: 5px;
