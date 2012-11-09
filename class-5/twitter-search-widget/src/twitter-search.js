@@ -20,7 +20,7 @@
             this.options[key] = this.options[key] || defaults[key];
         }
 
-        this.view = new TwitterSearchWidgetView(element, this.options);
+        this.view = new TwitterSearchWidgetView(element, this.options.template);
 
         if(this.options.query) {
             self.search(this.options.query);
@@ -90,9 +90,9 @@
         return data;
     }
 
-    var TwitterSearchWidgetView = function (element, options) {
+    var TwitterSearchWidgetView = function (element, template) {
         this.element = element || doc.createElement("div");
-        this.options = options;
+        this.template = template;
     };
 
     TwitterSearchWidgetView.prototype = {
@@ -137,7 +137,7 @@
                 throw new Error("Could not load widget template file.");
             });
 
-            xhr.open("GET", this.options.template);
+            xhr.open("GET", this.template);
             xhr.send();
         },
 
@@ -250,8 +250,6 @@
                 success(data);
             }
         };
-
-
 
         script.src = searchEndpoint + "?" + queryString;
 
