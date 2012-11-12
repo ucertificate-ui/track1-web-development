@@ -1,0 +1,68 @@
+{>"layout.html"/}
+{<head}
+<title>uCertificate - Twitter Client</title>
+
+<link rel="stylesheet" href="asset/css/TwitterClient.css" />
+{/head}
+{<content}
+<div class="twitter-client">
+  <form action="https://search.twitter.com/search.json"
+    method="post" target="_blank">
+    <fieldset>
+      <legend>Search in Twitter</legend>
+      <label>
+        <span>Account name:</span>
+        <input type="text" name="from" />
+      </label>
+      <label>
+        <span>Search criteria:</span>
+        <input type="text" name="q" />
+      </label>
+      <label>
+        <span>Result Type</span>
+        <select name="result_type">
+          <option value="mixed">Popular and real time results</option>
+          <option value="recent">Only most recent results</option>
+          <option value="popular">Only most popular results</option>
+        </select>
+      </label>
+      <label>
+        <input type="checkbox" name="show_user" />
+        <span>Show user in tweets</span>
+      </label>
+      <button class="search" type="submit">Search!</button>
+    </fieldset>
+  </form>
+  <!-- List of existing pages. -->
+  <div class="index">Pages: </div>
+  <div class="feed">
+    <img class="logo" src="asset/image/twitter.png" />
+    <button class="pager">View More</button>
+  </div>
+
+  <script class="tweet" type="html/template">
+    <p>
+      <span class="column">$[text]</span>
+      <a class="column" href="http://www.twitter.com/$[from_user]">
+        <img class="profile-picture-thumb" src="$[profile_image_url]" />
+        <span class="user-name">@$[from_user]</span>
+      </a>
+    </p>
+  </script>
+
+  <script type="text/javascript"
+      src="asset/js/TwitterSearch.js"></script>
+  <script type="text/javascript"
+      src="asset/js/TwitterClient.js"></script>
+  <script type="text/javascript"
+      src="asset/js/Template.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      var client = new TwitterClient(jQuery(".twitter-client"));
+      client.render();
+    });
+  </script>
+</div>
+{/content}
+

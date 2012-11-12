@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Forms</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../resources/css/forms.css" />
+  </head>
+  <body>
+    <form class="contact" method="post" action="forms.html">
+      <fieldset>
+        <legend>User Information</legend>
+
+        <label class="required">
+          <span>First name</span>
+          <input type="text" name="first-name" />
+        </label>
+
+        <label class="required">
+          <span>Last name</span>
+          <input type="text" name="last-name" />
+        </label>
+
+        <label class="required">
+          <span>Email</span>
+          <input type="text" name="email" />
+        </label>
+
+        <label>
+          <span>Profile picture</span>
+          <input type="file" name="picture" />
+        </label>
+
+        <div class="single required">
+          <span>Gender</span>
+          <label>
+            <input type="radio" name="gender" value="male" />
+            <span>Male</span>
+          </label>
+          <label>
+            <input type="radio" name="gender" value="female" />
+            <span>Female</span>
+          </label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Contact Information</legend>
+        <div class="double">
+          <label>
+            <span>Address</span>
+            <input type="text" name="address" />
+          </label>
+          <label>
+            <span>City</span>
+            <input type="text" name="city" />
+          </label>
+        </div>
+        <div class="double">
+          <label>
+            <span>Postal Code</span>
+            <input type="text" name="cp" />
+          </label>
+
+          <label>
+            <span>Country</span>
+            <select name="country">
+              <option>Argentina</option>
+              <option>Brazil</option>
+              <option>Colombia</option>
+              <option>United Kingdom</option>
+              <option>United States</option>
+              <option>Uruguay</option>
+            </select>
+          </label>
+        </div>
+        <label>
+          <span>Comments</span>
+          <textarea name="comments"></textarea>
+        </label>
+        <div class="single">
+          <label>
+            <input type="checkbox" name="accept-legal-terms" />
+            <span>I accept the Terms & Conditions</span>
+          </label>
+        </div>
+      </fieldset>
+      <button type="submit">Register!</button>
+    </form>
+  </body>
+</html>
+

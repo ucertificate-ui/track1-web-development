@@ -1,0 +1,27 @@
+@font-face {
+  font-family: sansation-light;
+  src: url('../font/Sansation_Light.ttf');
+}
+
+/** Sets the base font size. */
+body {
+  font-family: sansation-light;
+  font-size: 13px;
+}
+
+/** Headings. */
+h2 {
+  font-variant: small-caps;
+  margin: 5px 30px;
+}
+
+/** Form legends. */
+legend {
+  font-size: 127%;
+}
+
+/** Description text. */
+.description {
+  font-size: 1.3em;
+}
+
