@@ -1,0 +1,49 @@
+
+/** Super Mario container. */
+.super-mario {
+  background: url(../image/super-mario.gif) no-repeat transparent;
+  display: block;
+  height: 34px;
+  width: 16px;
+}
+
+/** Super Mario standing left. */
+.super-mario.stand.left {
+  background-position: -180px -51px;
+}
+
+/** Super Mario standing right. */
+.super-mario.stand.right {
+  background-position: -209px -51px;
+}
+
+/** Super Mario walking left - step one. */
+.super-mario.walk.left.one {
+  background-position: -150px -51px;
+}
+
+/** Super Mario walking left - step two. */
+.super-mario.walk.left.two {
+  background-position: -120px -51px;
+}
+
+/** Super Mario walking left - step three. */
+.super-mario.walk.left.three {
+  background-position: -90px -51px;
+}
+
+/** Super Mario walking right - step one. */
+.super-mario.walk.right.one {
+  background-position: -239px -51px;
+}
+
+/** Super Mario walking right - step two. */
+.super-mario.walk.right.two {
+  background-position: -269px -51px;
+}
+
+/** Super Mario walking right - step three. */
+.super-mario.walk.right.three {
+  background-position: -299px -51px;
+}
+

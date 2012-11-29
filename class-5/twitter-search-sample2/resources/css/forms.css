@@ -1,0 +1,100 @@
+/*---------------------
+ - Global form styles -
+ ----------------------*/
+
+/** Forms labels. */
+form label {
+  clear: both;
+  display: block;
+}
+
+/** Forms labels caption. */
+form label span:first-child {
+  display: inline-block;
+  vertical-align: middle;
+  width: 130px;
+}
+
+/** Forms labels caption. */
+form .required span:after {
+  color: #ff0000;
+  content: "*";
+}
+
+/** Forms labels caption, after the input. */
+form label input + span {
+  vertical-align: middle;
+}
+
+/** Form controls. */
+form input, form select, form textarea {
+  vertical-align: middle;
+  width: 70%;
+}
+
+/** Radio buttons and checkboxes. */
+form input[type = "checkbox"], form input[type = "radio"] {
+  width: auto;
+}
+
+/** Form controls arranged in columns. */
+form div {
+  float: left;
+}
+
+/** Form controls in column layout. */
+form div label span:first-child {
+  width: 100px;
+}
+
+/** Captions in column layout. */
+form div input, form div select, form div textarea {
+  width: 55%;
+}
+
+/** Captions in the first column when using column layout. */
+form div:first-child span:first-child,
+form div span:first-child {
+  width: 130px;
+}
+
+/** Single column layout. */
+form .single {
+  width: 100%;
+}
+
+/** Labels in single column layout. */
+form .single label {
+  display: inline-block;
+}
+
+/** Labels in single column layout, only the first one. */
+form .single label:first-child {
+  margin-left: 130px;
+}
+
+
+/** Labels in single column layout, only the first one. */
+form .single span:first-child {
+  display: inline-block;
+}
+
+/** Forms labels caption. */
+form .single.required label span:after {
+  content: "";
+}
+
+/** Two columns layout. */
+form .double {
+  width: 50%;
+}
+
+/*------------------------------
+ - Application-specific styles -
+ ------------------------------*/
+
+/** Contact form. */
+.contact {
+  width: 560px;
+}
+

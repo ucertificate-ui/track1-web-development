@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="resources/css/OneColumnLiquid.css" />
+    <link rel="stylesheet" href="resources/css/forms.css" />
+    <link rel="stylesheet" href="resources/css/fonts.css" />
+    <link rel="stylesheet" href="resources/css/TwitterClient.css" />
+
+    <script type="text/javascript"
+        src="src/vendor/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="src/bootstrap.js"></script>
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="header">
+        <h1>Twitter Client</h1>
+        <h2>A lightweight browser-side client for twitter</h2>
+      </div>
+      <div id="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+        </ul>
+      </div>
+      <div id="content">
+        <div class="twitter-client">
+          <form action="https://search.twitter.com/search.json"
+            method="post" target="_blank">
+            <fieldset>
+              <legend>Search in Twitter</legend>
+              <label>
+                <span>Account name:</span>
+                <input type="text" name="from" />
+              </label>
+              <label>
+                <span>Search criteria:</span>
+                <input type="text" name="q" />
+              </label>
+              <label>
+                <span>Result Type</span>
+                <select name="result_type">
+                  <option value="mixed">Popular and real time results</option>
+                  <option value="recent">Only most recent results</option>
+                  <option value="popular">Only most popular results</option>
+                </select>
+              </label>
+              <label>
+                <input type="checkbox" name="show_user" />
+                <span>Show user in tweets</span>
+              </label>
+              <button class="search" type="submit">Search!</button>
+            </fieldset>
+          </form>
+
+          <div class="feed">
+            <img class="logo" src="resources/image/twitter.png" />
+            <button class="pager">View More</button>
+          </div>
+
+          <script class="tweet" type="html/template">
+            <p>
+              <span class="column">$[text]</span>
+              <a class="column" href="http://www.twitter.com/$[from_user]">
+                <img class="profile-picture-thumb" src="$[profile_image_url]" />
+                <span class="user-name">@$[from_user]</span>
+              </a>
+            </p>
+          </script>
+
+          <script type="text/javascript"
+              src="src/TwitterClient.js"></script>
+          <script type="text/javascript"
+              src="src/TwitterSearch.js"></script>
+          <script type="text/javascript"
+              src="src/Template.js"></script>
+
+          <script type="text/javascript">
+            jQuery(function () {
+              var client = new TwitterClient(jQuery(".twitter-client"));
+              client.render();
+            });
+          </script>
+        </div>
+      </div>
+      <div id="footer">
+        Twitter Search documentation is found 
+        <a href="https://dev.twitter.com/docs/api/1/get/search">here</a>.
+      </div>
+    </div>
+  </body>
+</html>
+
